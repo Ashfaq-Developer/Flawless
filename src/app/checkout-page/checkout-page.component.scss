@@ -1,0 +1,11 @@
+.checkout-form-container{
+    padding: 100px 50px 50px 50px;
+}
+
+@media (max-width: 768px) {
+    .checkout-form-item{
+        width: 100% !important;
+        margin: 0px !important;
+    }
+
+}

@@ -1,0 +1,17 @@
+<div class="services py-5 flawless-background">
+    <div class="container">
+        <div class="row border border-start-0 border-bottom-0 border-end-0 py-5">
+            <div class="col-md-3 d-flex align-items-center" *ngFor="let item of service">
+                <div class="service-icon rounded-circle bg-white mx-auto p-2 text-center d-flex justify-content-center align-items-center text-danger">
+                    <i aria-hidden="true" class="{{ item.icon }}"></i>
+                </div>
+                <div class="service-content ms-2">
+                    <h5 class="title fs-6">{{ item.title }}</h5>
+                    <p class="fw-light">
+                        {{ item.para }}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

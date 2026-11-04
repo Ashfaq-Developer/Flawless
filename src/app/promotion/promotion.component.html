@@ -1,0 +1,15 @@
+<div class="promotion py-5 flawless-background">
+    <div class="container text-center">
+        <div class="row border border-start-0 border-bottom-0 border-end-0 py-5">
+            <div class="col-md-4" *ngFor="let item of promo_detail">
+                <div class="promotion-icon rounded-circle bg-white mx-auto mb-3 text-center d-flex justify-content-center align-items-center text-danger">
+                    <i aria-hidden="true" class="fas {{ item.icon }}"></i>
+                </div>
+                <h5 class="title">{{ item.title }}</h5>
+                <p>
+                    {{ item.para }}
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

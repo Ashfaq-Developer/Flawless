@@ -1,0 +1,97 @@
+<div class="product-page flawless-background">
+    <app-header></app-header>
+    <div class="container bg-white">
+        <div class="cart-page my-5">
+            <div class="cart-page-heading py-3 fw-bold fs-4">Cart</div>
+            <div class="cart-page-body pb-5">
+                <div class="table-responsive">
+                    <table class="table border table-borderless">
+                        <thead>
+                            <tr class="table-active">
+                                <th scope="col"></th>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Subtotal</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="empty-cart" *ngIf="this.cartProducts.length == 0">
+                                <th class="text-danger">No products in the cart.</th>
+                            </tr>
+                            <tr class="table-rows border" *ngFor="let item of this.cartProducts;index as i">
+                                <th class="" scope="row">
+                                    <button type="button" class="close bg-transparent border rounded-circle"
+                                        aria-label="Close" (click)="removeItem(item)">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </th>
+                                <td class="">
+                                    <img width="70" height="105" src="{{ item.image }}" alt="">
+                                    {{ item.title }}
+                                </td>
+                                <td class="">${{ item.price }}</td>
+                                <td class="">
+                                    <input type="number" id="quantity_64ed95c040d00"
+                                        class="input-text qty text form-control" name="quantity"
+                                        value="{{item.quantity}}" aria-label="Product quantity" size="4" min="1" max=""
+                                        step="1" placeholder="" inputmode="numeric" autocomplete="off"
+                                        style="max-width: 75px;" (change)="updateTotalPriceWithDelay(i, $event)">
+                                </td>
+                                <td class="">${{ (item.price * item.quantity).toFixed(2) }}</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>
+                                    <a routerLink="#" class="btn btn-outline-danger rounded-0"
+                                        *ngIf="this.cartProducts.length != 0">UPDATE CART</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <div class="cart_totals w-50 border" *ngIf="this.cartProducts.length != 0">
+                        <h2 class="bg-light p-3 fw-bold fs-4">Cart totals</h2>
+                        <table class="table table-borderless shop_table shop_table_responsive p-2">
+                            <tbody class="p-2">
+                                <tr class="cart-subtotal p-2">
+                                    <th>Subtotal</th>
+                                    <td data-title="Subtotal">
+                                        <span class="woocommerce-Price-amount amount">
+                                            <bdi>
+                                                <span class="woocommerce-Price-currencySymbol">$</span>
+                                                {{ getTotal }}
+                                            </bdi>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr class="order-total">
+                                    <th>Total</th>
+                                    <td data-title="Total">
+                                        <strong>
+                                            <span class="woocommerce-Price-amount amount">
+                                                <bdi>
+                                                    <span class="woocommerce-Price-currencySymbol">$</span>
+                                                    {{ getTotal }}
+                                                </bdi>
+                                            </span>
+                                        </strong>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="wc-proceed-to-checkout m-2">
+                            <a routerLink="/checkout" class="btn btn-outline-danger rounded-0">
+                                Proceed to checkout
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-our-services></app-our-services>
+</div>
+<app-footer></app-footer>

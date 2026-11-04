@@ -1,0 +1,14 @@
+.image-with-text-body{
+    padding: 100px 0px;
+}
+
+.image-with-text .card{
+    border: none;
+    background: none;
+}
+
+@media (max-width: 768px) {
+    .image-with-text .card{
+        width: 100% !important;
+    }
+}

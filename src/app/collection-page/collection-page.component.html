@@ -1,0 +1,43 @@
+<div class="flawless-background">
+    <app-header></app-header>
+    <div class="container">
+        <div class="collection d-flex flex-wrap">
+            <div class="collection-item collection-left-items w-25">
+                <div class="collection-filter card mb-5 p-3 border-0">
+                    <!-- <h2>Filter by price</h2> -->
+                    <div class="range">
+                        <label for="customRange3" class="form-label">Filter by price</label>
+                        <input type="range" class="form-range" min="0" max="5" step="0.5" id="customRange3">
+                    </div>
+                    <div class="filter d-flex justify-content-between align-items-center">
+                        <div class="filter-btn">
+                            <a class="btn btn-outline-danger rounded-0">FILTER</a>
+                        </div>
+                        <div class="price_label">
+                            Price: <span class="from">$10</span> — <span class="to">$50</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="collection-filter-items p-3 card border-0">
+                    <!-- <h2>Filter by Categories</h2> -->
+                    <label class="py-3">Filter by Categories</label>
+                    <div class="list-group collection-filter-list">
+                        <!-- <a href="" class="list-group-item" *ngFor="let item of list">{{item.type}}</a> -->
+                        <a href="" class="list-group-item collection-filter-list-item">Cleanser</a>
+                        <a href="" class="list-group-item">Sunscreens</a>
+                        <a href="" class="list-group-item">Body lotion</a>
+                        <a href="" class="list-group-item">Bundles</a>
+                        <a href="" class="list-group-item">Moisturizer</a>
+                    </div>
+                </div>
+            </div>
+            <div class="collection-item collection-right-items w-75">
+                <div class="collection-items card ms-5 border-0">
+                    <app-products [productsPerRow]="3"></app-products>
+                </div>
+            </div>
+        </div>
+    </div>
+    <app-our-services></app-our-services>
+    <app-footer></app-footer>
+</div>

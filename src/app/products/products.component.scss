@@ -1,0 +1,47 @@
+.star-rating {
+    overflow: hidden;
+    position: relative;
+    height: 1em;
+    line-height: 1;
+    font-size: 1em;
+    width: 5.4em;
+    font-family: star;
+}
+
+.star-rating::before {
+    content: "\2605\2605\2605\2605";
+    color: #646467;
+    float: left;
+    top: 0;
+    left: 0;
+    position: absolute;
+}
+
+.add_to__cart_icon {
+    top: 30px;
+    right: 30px;
+    border-radius: 50%;
+    color: black;
+    background: white;
+    opacity: 0.7;
+    width: 2em;
+    height: 2em;
+    display: none;
+    justify-content: center;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+}
+
+.add_to__cart_icon svg {
+    height: 18px;
+    width: 18px;
+    margin: auto;
+}
+
+.feature-product:hover .add_to__cart_icon{
+    display: flex;
+}
+
+.feature-content{
+    cursor: pointer;
+}

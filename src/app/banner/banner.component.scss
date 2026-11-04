@@ -1,0 +1,16 @@
+@media (max-width: 768px) {
+    .card-img-overlay {
+        position: relative !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .card-img-overlay {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        top: 50% !important;
+        left: 50% !important;
+        transform: translate(-50%, -50%);
+    }
+}

@@ -1,0 +1,12 @@
+.collection {
+    padding-top: 100px;
+}
+
+@media(max-width: 768px) {
+    .collection-item {
+        width: 100% !important;
+    }
+    .collection-items{
+        margin: 0px !important;
+    }
+}
